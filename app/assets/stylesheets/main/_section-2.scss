@@ -1,0 +1,361 @@
+.about-section{
+  padding: 112px 0 820px;
+  //padding: 112px 0 350px;
+  background: $light;
+  @include bp(xl) {
+    padding-bottom: 60px;
+    z-index: 1;
+  }
+  @include bp(xs) {
+    padding: 40px 0;
+    z-index: 1;
+  }
+}
+
+.about-top{
+  display: flex;
+  align-items: flex-end;
+  height: 792px;
+  margin-bottom: 177px;
+  @include bp(xxl) {
+    height: 657px;
+    margin-bottom: 80px;
+  }
+  @include bp(xl) {
+    height: 370px;
+  }
+  @include bp(sm) {
+    height: 320px;
+  }
+  @include bp(xs) {
+    height: auto;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 60px;
+  }
+  .col-lg-2{
+    @include bp(xl) {
+      display: none;
+    }
+  }
+}
+
+.about-top__text{
+  align-self: flex-start;
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-align: right;
+  @include bp(xxl) {
+    font-size: 48px;
+  }
+  @include bp(xl) {
+    font-size: 40px;
+    width: 50%;
+  }
+  @include bp(sm) {
+    font-size: 30px;
+  }
+  @include bp(xs) {
+    width: 100%;
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: left;
+  }
+}
+
+.about-top__pic{
+  @include bp(xl) {
+    width: calc(50% + 9px);
+    margin-right: -9px;
+    padding-right: 0;
+  }
+  @include bp(xs) {
+    width: calc(100% - 102px);
+    margin-right: 0;
+    padding: 0;
+    align-self: flex-end;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+.about-mid{
+  display: flex;
+  margin-bottom: 60px;
+  @include bp(xl) {
+    display: none;
+  }
+  @include bp(xs) {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+  &__tablet{
+    display: none;
+    @include bp(xl) {
+      display: flex;
+    }
+    @include bp(xs) {
+      display: none;
+    }
+  }
+  &__mobile{
+    display: none;
+  }
+  .col-lg-3{
+    height: inherit;
+    @include bp(xs) {
+      height: auto;
+      width: 100%;
+      padding: 0;
+    }
+    &.about-mid__pic{
+      @include bp(xs) {
+        height: 75vw;
+      }
+    }
+  }
+  .col-lg-6{
+    width: 50%;
+    @include bp(xl) {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}
+
+.about-mid__pic{
+  @include bp(xl) {
+    height: calc(39.5vw - 45px);
+    max-height: 284px;
+    margin-bottom: 30px;
+  }
+  @include bp(xs) {
+    order: 2;
+    max-height: 270px;
+    margin-bottom: 0;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.about-mid__one{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include bp(xs) {
+    order: 1;
+  }
+  >ul{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    @include bp(xl) {
+      font-size: 18px;
+      padding: 0 16px;
+    }
+    @include bp(xs) {
+      font-size: 16px;
+    }
+    li{
+      margin-bottom: 24px;
+      @include bp(xxl) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  >div{
+    min-height: 105px;
+    flex-grow: 1;
+    width: 100%;
+    background-color: $black;
+    color: $accent;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    @include bp(xxl) {
+      min-height: 95px;
+    }
+    @include bp(xl) {
+      min-height: 84px;
+      font-size: 18px;
+      padding: 10px 16px;
+    }
+    @include bp(xs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.about-mid__two{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include bp(xs) {
+    order: 3;
+  }
+  >ul{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    @include bp(xl) {
+      font-size: 18px;
+      padding: 0 16px;
+    }
+    @include bp(xs) {
+      font-size: 16px;
+    }
+    li{
+      margin-top: 24px;
+      @include bp(xxl) {
+        margin-top: 20px;
+      }
+    }
+  }
+  >div{
+    min-height: 105px;
+    flex-grow: 1;
+    width: 100%;
+    background-color: $black;
+    color: $accent;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    @include bp(xxl) {
+      min-height: 95px;
+    }
+    @include bp(xl) {
+      min-height: 84px;
+      font-size: 18px;
+      padding: 10px 16px;
+    }
+    @include bp(xs) {
+      font-size: 16px;
+    }
+  }
+}
+
+.about-mid__three{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  @include bp(xl) {
+    flex-grow: 1;
+    margin-top: 30px;
+  }
+  @include bp(xs) {
+    order: 4;
+    margin-top: 20px;
+  }
+  >ul{
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    text-align: center;
+    @include bp(xl) {
+      font-size: 18px;
+      padding: 0 16px;
+    }
+    @include bp(xs) {
+      font-size: 16px;
+    }
+    li{
+      margin-bottom: 24px;
+      @include bp(xxl) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  >div{
+    min-height: 15px;
+    flex-grow: 1;
+    width: 100%;
+    background-color: $black;
+    @include bp(xs) {
+      min-height: 30px;
+    }
+  }
+}
+
+.about-bot{
+  display: flex;
+  align-items: center;
+  @include bp(xl) {
+    flex-direction: column-reverse;
+  }
+  .col-md-12{
+    @include bp(xl) {
+      width: 100%;
+    }
+  }
+}
+
+.about-bot__text{
+  @include bp(xl) {
+    margin-top: 40px;
+  }
+  @include bp(xs) {
+    margin-top: 20px;
+  }
+  >div{
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 140%;
+    margin-bottom: 30px;
+    text-indent: 90px;
+  }
+}
+
+.about-bot__pic{
+  @include bp(xs) {
+    padding: 0;
+  }
+  img{
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+}

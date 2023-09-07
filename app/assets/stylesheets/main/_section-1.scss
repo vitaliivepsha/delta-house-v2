@@ -1,0 +1,255 @@
+.main-section{
+  position: relative;
+  padding-top: 214px;
+  background: $light;
+  @include bp(md) {
+    padding-top: 194px;
+  }
+  @include bp(xs) {
+    padding-top: 168px;
+  }
+}
+
+.main-top__text{
+  display: flex;
+  @include bp(xxl) {
+    flex-direction: column;
+  }
+}
+
+.main-top__text-left{
+  font-size: 100px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-indent: 88px;
+  @include bp(xxl) {
+    font-size: 80px;
+  }
+  @include bp(xl) {
+    width: 100%;
+  }
+  @include bp(sm) {
+    font-size: 54px;
+  }
+  @include bp(xs) {
+    text-indent: 0;
+    font-size: 48px;
+    text-align: right;
+  }
+  @include bp(xxs) {
+    font-size: 42px;
+  }
+}
+
+.main-top__text-right{
+  padding-top: 63px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  @include bp(xxl) {
+    padding-top: 53px;
+  }
+  @include bp(xl) {
+    width: 50%;
+    max-width: 272px;
+    margin-left: 50%;
+    padding-top: 40px;
+    font-size: 16px;
+    line-height: 140%;
+  }
+  @include bp(xs) {
+    padding-top: 20px;
+    line-height: 140%;
+    font-size: 14px;
+    padding-left: 0;
+    left: -10px;
+  }
+}
+
+.main-video__wrapper{
+  position: relative;
+  padding: 80px 0;
+  @include bp(xl) {
+    padding-bottom: 0;
+  }
+  @include bp(xs) {
+    padding: 60px 0 0;
+  }
+  &.active{
+    &:after{
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(-200px);
+      border-radius: 0;
+      scale: 1;
+    }
+  }
+  &:after{
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    content: '';
+    opacity: 0;
+    visibility: hidden;
+    transition: linear .7s;
+    background-color: $black;
+    z-index: 1;
+    scale: .3;
+    border-radius: 24px;
+    height: calc(100% + 200px);
+    @include bp(xs) {
+      border-radius: 15px;
+    }
+  }
+}
+
+.main-video{
+  position: relative;
+  z-index: 2;
+  border-radius: 24px;
+  overflow: hidden;
+  @include bp(xl) {
+    border-radius: 0;
+  }
+  .iframe-wrapper{
+    @include bp(xl) {
+      border-radius: 24px;
+      overflow: hidden;
+    }
+    @include bp(xs) {
+      border-radius: 10px;
+    }
+  }
+}
+
+.iframe-wrapper{
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%;
+  iframe, video{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: block;
+    margin: 0;
+    top: 0;
+    left: 0;
+  }
+}
+
+.main-video__text{
+  display: flex;
+  align-items: flex-end;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  color: $accent;
+  padding: 30px;
+  @include bp(xl) {
+    position: static;
+    padding: 80px 0;
+    min-height: 100vh;
+    flex-wrap: wrap;
+    align-items: flex-start;
+  }
+  @include bp(xs) {
+    flex-direction: column;
+    justify-content: center;
+    padding: 46px 0;
+  }
+}
+
+.main-video__text-left{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: uppercase;
+  padding-bottom: 15px;
+  @include bp(xxl) {
+    padding-bottom: 5px;
+  }
+  @include bp(xl) {
+    width: 33.33333%;
+    align-self: flex-end;
+    padding-bottom: 3px;
+    font-size: 18px;
+  }
+  @include bp(xs) {
+    width: 100%;
+    font-size: 16px;
+    max-width: 242px;
+    align-self: flex-start;
+    padding-bottom: 20px;
+  }
+}
+
+.main-video__text-mid{
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  @include bp(xxl) {
+    font-size: 48px;
+  }
+  @include bp(xl) {
+    width: 66.66666667%;
+    max-width: calc(66.66666667% - 130px);
+    font-size: 40px;
+    align-self: flex-end;
+  }
+  @include bp(sm) {
+    font-size: 32px;
+    max-width: unset;
+  }
+  @include bp(xs) {
+    width: 100%;
+    align-self: flex-start;
+  }
+}
+
+.main-video__text-right{
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 140%;
+  text-transform: uppercase;
+  @include bp(xxl) {
+    padding-bottom: 5px;
+  }
+  @include bp(xl) {
+    width: 66.66666667%;
+    margin-left: 33.33333%;
+    max-width: calc(66.66666667% - 130px);
+    margin-top: 80px;
+    font-size: 18px;
+  }
+  @include bp(sm) {
+    max-width: unset;
+  }
+  @include bp(xs) {
+    margin-top: 40px;
+    width: 100%;
+    max-width: unset;
+    margin-left: 0;
+    font-size: 16px;
+  }
+  svg{
+    display: block;
+    margin-bottom: 38px;
+    @include bp(xl) {
+      width: 242px;
+      height: 199px;
+      margin-bottom: 30px;
+    }
+    @include bp(xs) {
+      margin-bottom: 20px;
+    }
+  }
+}

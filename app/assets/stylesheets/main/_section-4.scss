@@ -1,0 +1,141 @@
+.news-section{
+  padding-bottom: 60px;
+  background: $light;
+  @include bp(xs) {
+    padding: 40px 0 20px;
+  }
+  .container-lg{
+    >.link{
+      display: none;
+      margin-top: 20px;
+      @include bp(sm) {
+        display: flex;
+      }
+    }
+  }
+}
+
+.news-section__header{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 60px;
+  @include bp(xs) {
+    margin-bottom: 40px;
+  }
+  .link{
+    @include bp(sm) {
+      display: none;
+    }
+  }
+}
+
+.news-section__title{
+  font-size: 64px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  max-width: calc(100% - 200px);
+  @include bp(xxl) {
+    font-size: 48px;
+  }
+  @include bp(sm) {
+    max-width: 100%;
+  }
+  @include bp(xs) {
+    font-size: 32px;
+  }
+}
+
+.news-section__main{
+  display: flex;
+  .col-lg-3{
+    @include bp(xxl) {
+      width: 33.33333%;
+    }
+    @include bp(lg) {
+      width: 50%;
+    }
+    @include bp(xs) {
+      width: 100%;
+      padding: 0;
+    }
+    &:nth-last-child(1){
+      @include bp(xxl) {
+        display: none;
+      }
+    }
+    &:nth-last-child(2){
+      @include bp(lg) {
+        display: none;
+      }
+    }
+    &:nth-last-child(3){
+      @include bp(xs) {
+        display: none;
+      }
+    }
+  }
+}
+
+.news-section__item{
+  text-decoration: none;
+  color: $black;
+  &:hover, &:focus{
+    color: $black;
+    text-decoration: none;
+    .news-section__item-title{
+      color: $orange;
+    }
+  }
+}
+
+.news-section__item-title{
+  display: block;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  transition: color linear .2s;
+  @include bp(xs) {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0 16px;
+    font-size: 20px;
+  }
+}
+
+.news-section__item-pic{
+  height: 236px;
+  @include bp(xxl) {
+    height: calc(19vw - 37.5px);
+  }
+  @include bp(xl) {
+    height: calc(31vw - 45px);
+  }
+  @include bp(xs) {
+    height: 56.1vw;
+  }
+  img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.news-section__item-footer{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 16px;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  @include bp(xs) {
+    padding: 0 16px;
+  }
+}

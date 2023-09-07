@@ -1,0 +1,234 @@
+.header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 94px;
+  transition: linear .7s;
+  background: rgba($light, 0.60);
+  -webkit-backdrop-filter: blur(8px);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  @include bp(xs) {
+    height: 88px;
+  }
+  &#video_wrap{
+    background: rgba(71, 72, 68, 0.60);
+    .header-logo{
+      svg{
+        path{
+          fill: #fff;
+        }
+      }
+    }
+    .header-menu{
+      >li{
+        >a, >span{
+          color: #fff;
+        }
+        &.current-menu-item{
+          >a, >span{
+            color: $orange;
+          }
+        }
+      }
+    }
+    .btn{
+      &.btn-tr{
+        color: #fff;
+      }
+    }
+  }
+}
+
+.header-wrapper{
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: 16px 0;
+  height: 94px;
+  @include bp(xs) {
+    height: 88px;
+    align-items: center;
+    padding: 20px 0 14px;
+  }
+}
+
+.header-left{
+  position: relative;
+}
+
+.header-logo{
+  position: relative;
+  bottom: -2px;
+  @include bp(xs) {
+    bottom: auto;
+  }
+  svg{
+    @include bp(xs) {
+      width: 86px;
+      height: 54px;
+    }
+  }
+}
+
+.header-menu{
+  display: flex;
+  align-items: flex-end;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  text-transform: uppercase;
+  gap: 30px;
+  @include bp(xl) {
+    display: none;
+  }
+  >li{
+    position: relative;
+    &:before{
+      position: absolute;
+      content: '';
+      width: calc(100% + 20px);
+      height: calc(100% + 20px);
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    &.has-children{
+      cursor: pointer;
+      &:hover{
+        >ul{
+          opacity: 1;
+          visibility: visible;
+          top: 100%;
+        }
+      }
+      >ul{
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+        transition: linear .3s;
+        top: calc(100% + 20px);
+        width: max-content;
+        min-width: 100%;
+        background-color: #E0E1D2;
+        border-top: 1px solid $orange;
+        padding: 20px 16px 10px;
+        >li{
+          margin-bottom: 15px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          >a, >span{
+            position: relative;
+            &:before{
+              position: absolute;
+              content: '';
+              width: calc(100% + 20px);
+              height: calc(100% + 20px);
+              left: 50%;
+              top: 50%;
+              transform: translate(-50%, -50%);
+            }
+          }
+        }
+      }
+    }
+    &.current-menu-item{
+      >a, >span{
+        color: $orange;
+      }
+    }
+    >a, >span{
+      display: block;
+      position: relative;
+      &:before{
+        position: absolute;
+        content: '';
+        width: calc(100% + 20px);
+        height: calc(100% + 20px);
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
+
+.header-right{
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  .btn{
+    @include bp(xs) {
+      display: none;
+    }
+  }
+}
+
+.menu-btn{
+  margin-left: 24px;
+  cursor: pointer;
+  @include bp(xs) {
+    margin-left: auto;
+  }
+  &:hover{
+    svg{
+      path{
+        +path{
+          fill: $bg-hover;
+        }
+      }
+    }
+  }
+  svg{
+    @include bp(xs) {
+      width: 52px;
+      height: 41px;
+    }
+  }
+}
+
+.widget{
+  position: fixed;
+  z-index: 50;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  border-radius: 16px 0 0 16px;
+  background: rgba(58, 116, 124, .8);
+  -webkit-backdrop-filter: blur(2px);
+  backdrop-filter: blur(2px);
+  width: 90px;
+  padding: 30px 5px;
+  @include bp(sm) {
+    display: none;
+  }
+  >li{
+    margin-bottom: 19px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    a{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      font-size: 12px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: normal;
+      color: $accent;
+      &:hover{
+        color: #fff;
+        svg{
+          path{
+            fill: #fff;
+          }
+        }
+      }
+    }
+  }
+}
