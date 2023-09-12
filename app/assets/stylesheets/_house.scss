@@ -1197,9 +1197,6 @@
     left: 24px;
     top: 48px;
   }
-  @include bp(xs) {
-    left: 16px;
-  }
   svg{
     display: none;
     width: 100%;
