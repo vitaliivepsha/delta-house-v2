@@ -134,7 +134,7 @@
       display: none;
       &:checked{
         +label{
-          background: #3A747C;
+          background: $green;
           color: #fff;
           @include bp(xs) {
             background: transparent;

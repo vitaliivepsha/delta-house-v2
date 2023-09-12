@@ -4,6 +4,7 @@
 
 if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/index.html');
+    require('./assets/templates/layouts/house.html');
 }
 
 // Depends
@@ -49,63 +50,67 @@ $(function () {
 
     // video background change
 
-    $(window).scroll(function () {
-        var $video_wrapper = $('.main-video__wrapper');
-        var data_id = $video_wrapper.data('id');
-        if ($(window).width() >= 768) {
-            var top = $video_wrapper.offset().top - 200;
-        } else {
-            var top = $video_wrapper.offset().top - 174;
-        }
-        var bottom = top + $video_wrapper.height() + 200;
-        var scroll = $(window).scrollTop();
-        if (scroll > top && scroll < bottom) {
-            $video_wrapper.addClass('active');
-            $('.header').attr('id', data_id);
-        }
-        else{
-            $video_wrapper.removeClass('active');
-            $('.header').removeAttr('id');
-        }
-    });
+    if ($('.main-video__wrapper').length){
+        $(window).scroll(function () {
+            var $video_wrapper = $('.main-video__wrapper');
+            var data_id = $video_wrapper.data('id');
+            if ($(window).width() >= 768) {
+                var top = $video_wrapper.offset().top - 200;
+            } else {
+                var top = $video_wrapper.offset().top - 174;
+            }
+            var bottom = top + $video_wrapper.height() + 200;
+            var scroll = $(window).scrollTop();
+            if (scroll > top && scroll < bottom) {
+                $video_wrapper.addClass('active');
+                $('.header').attr('id', data_id);
+            }
+            else{
+                $video_wrapper.removeClass('active');
+                $('.header').removeAttr('id');
+            }
+        });
+    }
 
     // logos fixed scroll
 
-    setTimeout(function () {
-        var $logos = $('.logos'),
-            window_height = $(window).height(),
-            logos_width = $logos.width(),
-            header_height = $('header').width();
-        $(window).scroll(function() {
-            var windowBottom = $(this).scrollTop() + $(this).innerHeight(),
-                screen_pos = $('.logos-section').offset().top,
-                screen_height = $('.logos-section').innerHeight(),
-                wScroll = $(this).scrollTop(),
-                objectPos = $('.logos').offset().top;
-            //console.log(screen_pos, objectPos, wScroll, windowBottom, screen_height, window_height);
-            if (screen_pos + window_height - header_height < windowBottom && wScroll < screen_pos + screen_height) { //object comes into view (scrolling down)
-                if ($(window).width() > 1249){
-                    $logos.css({left: '-' + (wScroll - logos_width)/50 + '%'});
+    if ($('.logos-section').length){
+        setTimeout(function () {
+            var $logos = $('.logos'),
+                window_height = $(window).height(),
+                logos_width = $logos.width(),
+                header_height = $('header').width();
+            $(window).scroll(function() {
+                var windowBottom = $(this).scrollTop() + $(this).innerHeight(),
+                    screen_pos = $('.logos-section').offset().top,
+                    screen_height = $('.logos-section').innerHeight(),
+                    wScroll = $(this).scrollTop(),
+                    objectPos = $('.logos').offset().top;
+                //console.log(screen_pos, objectPos, wScroll, windowBottom, screen_height, window_height);
+                if (screen_pos + window_height - header_height < windowBottom && wScroll < screen_pos + screen_height) { //object comes into view (scrolling down)
+                    if ($(window).width() > 1249){
+                        $logos.css({left: '-' + (wScroll - logos_width)/50 + '%'});
+                    }
+                    else{
+                        $logos.css({left: '-' + (wScroll - logos_width - header_height)/50 + '%'});
+                    }
+                    $('.logos-inner').addClass('fixed');
                 }
-                else{
-                    $logos.css({left: '-' + (wScroll - logos_width - header_height)/50 + '%'});
+                else if (wScroll > screen_pos + screen_height && screen_pos + window_height - header_height > windowBottom){ //object goes out of view (scrolling up)
+                    if ($(window).width() > 1249){
+                        $logos.css({left: (wScroll - logos_width)/50 + '%'});
+                    }
+                    else{
+                        $logos.css({left: (wScroll - logos_width - header_height)/50 + '%'});
+                    }
+                    $('.logos-inner').addClass('fixed');
+                } else { //object goes out of view (scrolling up)
+                    //$logos.css({left: 0});
+                    $('.logos-inner').removeClass('fixed');
                 }
-                $('.logos-inner').addClass('fixed');
-            }
-            else if (wScroll > screen_pos + screen_height && screen_pos + window_height - header_height > windowBottom){ //object goes out of view (scrolling up)
-                if ($(window).width() > 1249){
-                    $logos.css({left: (wScroll - logos_width)/50 + '%'});
-                }
-                else{
-                    $logos.css({left: (wScroll - logos_width - header_height)/50 + '%'});
-                }
-                $('.logos-inner').addClass('fixed');
-            } else { //object goes out of view (scrolling up)
-                //$logos.css({left: 0});
-                $('.logos-inner').removeClass('fixed');
-            }
-        }).scroll();
-    }, 1200);
+            }).scroll();
+        }, 1200);
+    }
 
     // scale content when footer is visible
 
@@ -147,6 +152,114 @@ $(function () {
         $('.menu-main').removeClass('active');
         $('body').removeClass('menu-opened');
     });
+
+    // iframe video play
+
+    $('.video-play').on('click', function(e) {
+        var src = $(this).data('video-src'),
+            $video = $(this).find('iframe');
+        $(this).find('img').hide();
+        $(this).find('.play-btn').hide();
+        $video.attr('src', src);
+        e.preventDefault();
+    });
+
+    // dropdown
+
+    $('.dropdown-wrapper .btn').on('click', function(e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function() {
+        $('.dropdown-wrapper').removeClass('open');
+    });
+
+    $(document).on('click', '.dropdown-wrapper', function(e) {
+        e.stopPropagation();
+    });
+
+    // faq
+
+    $('.faq-item__head').on('click', function () {
+        $(this).closest('.faq-item').toggleClass('active').siblings().removeClass('active');
+        $(this).next('.faq-item__body').slideToggle().closest('.faq-item').siblings().find('.faq-item__body').slideUp();
+    });
+
+    // modular house calculator
+
+    function getvalues() {
+        var values = $('.item-component.checked')
+            .map(function () {
+                return $(this).data('name');
+            }).get().join(', ');
+        $('.house-calculator__components input').val(values);
+        $('.house-calculator__components textarea').val(values);
+    }
+    getvalues();
+
+    function getsum() {
+        var sum = 0;
+        $('.item-component.checked').each(function() {
+            var price = $(this).data('price');
+            sum += price;
+        });
+        $('.house-calculator__total span').html(sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ',0');
+    }
+    getsum();
+
+    $('.item-component:not(.radio-component)').click(function (){
+        $(this).toggleClass('checked');
+        getvalues();
+        getsum();
+        $('.house-calculator__components input').each(function(){ $(this).scrollLeft($(this)[0].scrollWidth) });
+        $('.house-calculator__components textarea').each(function(){ $(this).scrollTop($(this)[0].scrollHeight) });
+    });
+
+    $('.item-component.radio-component').click(function (){
+        if (!$(this).hasClass('checked')){
+            $(this).addClass('checked').siblings().removeClass('checked');
+        }
+        getsum();
+        $('.house-calculator__components input').each(function(){ $(this).scrollLeft($(this)[0].scrollWidth) });
+        $('.house-calculator__components textarea').each(function(){ $(this).scrollTop($(this)[0].scrollHeight) });
+    });
+
+    setTimeout(function () {
+        $('.house-calculator__components input').each(function(){ $(this).scrollLeft($(this)[0].scrollWidth) });
+        $('.house-calculator__components textarea').each(function(){ $(this).scrollTop($(this)[0].scrollHeight) });
+    }, 100);
+
+    $('.house-calculator__btn-more').click(function (){
+        $(this).toggleClass('active');
+        $('.house-calculator__grid').slideToggle();
+    });
+
+    // modular house images
+
+    if($('.house-images').length){
+        setTimeout(function () {
+            var $house_images_top = $('.house-images__top > div'),
+                $house_images_bottom = $('.house-images__bottom > div'),
+                house_images_top_width = $('.house-images__top > div').width(),
+                house_images_bottom_width = $('.house-images__bottom > div').width(),
+                container_width = $('.container-lg').width(),
+                move_right = house_images_top_width - container_width,
+                move_left = house_images_bottom_width - container_width;
+            $(window).scroll(function() {
+                //console.log(house_images_top_width, house_images_bottom_width, container_width, move_left, move_right);
+                var screen_pos = $('.house-images').offset().top - $(window).height()/3,
+                    wScroll = $(this).scrollTop();
+                if (wScroll > screen_pos) {
+                    $house_images_top.css({left: move_right + 'px'});
+                    $house_images_bottom.css({left: '-' + move_left + 'px'});
+                } else {
+                    $house_images_top.css({left: 0});
+                    $house_images_bottom.css({left: 0});
+                }
+            }).scroll();
+        }, 1200);
+    }
 
     // animations
 

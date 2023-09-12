@@ -1,0 +1,13 @@
+.breadcrumbs{
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  color: rgba($black, .4);
+  a{
+    color: rgba($black, .4);
+    +span{
+      padding: 0 4px;
+    }
+  }
+}

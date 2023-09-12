@@ -12,7 +12,7 @@
 
 .main-top__text{
   display: flex;
-  @include bp(xxl) {
+  @include bp(xl) {
     flex-direction: column;
   }
 }
@@ -242,6 +242,20 @@
   }
   svg{
     display: block;
+    margin-bottom: 38px;
+    @include bp(xl) {
+      width: 242px;
+      height: 199px;
+      margin-bottom: 30px;
+    }
+    @include bp(xs) {
+      margin-bottom: 20px;
+    }
+  }
+  img{
+    display: block;
+    width: 234px;
+    height: 192px;
     margin-bottom: 38px;
     @include bp(xl) {
       width: 242px;

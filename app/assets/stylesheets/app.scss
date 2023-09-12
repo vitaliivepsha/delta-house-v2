@@ -153,14 +153,18 @@ main {
   transition: linear .2s;
   cursor: pointer;
   outline: none !important;
-  box-shadow: none;
-  @include bp(xs) {
-  }
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
   &:focus,
   &:hover {
     outline: none !important;
-    box-shadow: none;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
     color: #fff;
+  }
+  &:active{
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
   }
   &:hover {
     background-color: $bg-hover;
@@ -172,6 +176,7 @@ main {
     font-style: normal;
     font-weight: 600;
     line-height: 140%;
+    padding: 0 20px;
     height: 52px;
     border-radius: 26px;
   }
@@ -361,8 +366,10 @@ main {
 // Header
 @import "header";
 
-// Main menu
+// Parts
 @import "menu-main";
+@import "breadcrumbs";
+@import "faq";
 
 // Main
 @import "main/section-1";
@@ -374,6 +381,7 @@ main {
 @import "footer";
 
 // Pages
+@import "house";
 
 // Popup
 @import "popup";

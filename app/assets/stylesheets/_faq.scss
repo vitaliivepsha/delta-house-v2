@@ -1,0 +1,119 @@
+.faq-items{
+  border-bottom: 1px solid rgba($black, .4);
+  .faq-item{
+    counter-increment: faq-step;
+    margin-top: -8px;
+    &:first-child{
+      margin-top: 0;
+    }
+    &:last-child{
+      .faq-item__head{
+        height: 76px;
+      }
+      &.active{
+        .faq-item__head{
+          height: auto;
+        }
+      }
+    }
+  }
+}
+
+.faq-item{
+  transition: ease-in-out .3s;
+  position: relative;
+  z-index: 1;
+  border-radius: 8px 8px 0 0;
+  background: #E0E1D2;
+  &.active{
+    height: auto;
+    background-color: $black;
+    color: #fff;
+    .faq-item__head{
+      height: auto;
+      i{
+        background-color: $green;
+        svg{
+          path{
+            opacity: 0;
+            +path{
+              opacity: 1;
+              fill: $accent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.faq-item__head{
+  height: 84px;
+  overflow: hidden;
+  position: relative;
+  padding: 20px 90px 20px 54px;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  cursor: pointer;
+  border-radius: 8px 8px 0 0;
+  border: 1px solid rgba($black, .4);
+  border-bottom-width: 0;
+  transition: ease-in-out .3s;
+  @include bp(md) {
+    font-size: 20px;
+  }
+  @include bp(xs) {
+    padding-right: 70px;
+  }
+  &.active{
+    height: auto;
+  }
+  &:before{
+    position: absolute;
+    content: counter(faq-step) ".";
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-transform: uppercase;
+    left: 16px;
+    top: 35px;
+    opacity: .4;
+  }
+  i{
+    position: absolute;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    top: 16px;
+    right: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+  }
+}
+
+.faq-item__body{
+  display: none;
+  border: 1px solid rgba($black, .4);
+  border-top-width: 0;
+  padding: 0 90px 28px 54px;
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  >*{
+    transition: ease-in-out .3s;
+    margin-bottom: 24px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+  ul{
+    list-style-type: disc;
+    padding-left: 25px;
+  }
+}
