@@ -511,14 +511,21 @@
 .to-top{
   width: 64px;
   height: 64px;
-  background: $orange;
+  background: $light;
   border-radius: 50%;
   pointer-events: all;
   display: flex;
   align-items: center;
   justify-content: center;
   transition: linear .2s;
+  position: relative;
+  right: -20px;
   &:hover{
-    background: $bg-hover;
+    background: $orange;
+    svg{
+      path{
+        fill: #fff;
+      }
+    }
   }
 }

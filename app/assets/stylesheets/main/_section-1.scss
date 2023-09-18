@@ -15,6 +15,9 @@
   @include bp(xl) {
     flex-direction: column;
   }
+  *{
+    transition: linear 1s;
+  }
 }
 
 .main-top__text-left{
@@ -70,7 +73,7 @@
 }
 
 .main-video__wrapper{
-  position: relative;
+  //position: relative;
   padding: 80px 0;
   @include bp(xl) {
     padding-bottom: 0;
@@ -78,30 +81,47 @@
   @include bp(xs) {
     padding: 60px 0 0;
   }
+  &.animate-me{
+    &:after{
+      transition: scale 2s, top 3s, border-radius 3s;
+    }
+    .main-video{
+      .iframe-wrapper{
+        transition: linear 1.5s;
+      }
+    }
+  }
   &.active{
     &:after{
       opacity: 1;
       visibility: visible;
-      transform: translateY(-200px);
+      //transform: translateY(-200px);
       border-radius: 0;
       scale: 1;
+      top: 0;
+    }
+    .main-video{
+      .iframe-wrapper{
+        scale: 1;
+      }
     }
   }
   &:after{
     position: absolute;
     left: 0;
-    top: 0;
+    //top: 40px;
+    top: 50%;
     right: 0;
     bottom: 0;
     content: '';
     opacity: 0;
     visibility: hidden;
-    transition: linear .7s;
+    //transition: linear .7s;
     background-color: $black;
     z-index: 1;
-    scale: .3;
+    scale: .7;
     border-radius: 24px;
-    height: calc(100% + 200px);
+    //height: calc(100% + 200px);
     @include bp(xs) {
       border-radius: 15px;
     }
@@ -117,6 +137,7 @@
     border-radius: 0;
   }
   .iframe-wrapper{
+    scale: .8;
     @include bp(xl) {
       border-radius: 24px;
       overflow: hidden;

@@ -63,9 +63,16 @@
   transition: ease-in-out .3s;
   @include bp(md) {
     font-size: 20px;
+    padding-top: 26px;
   }
   @include bp(xs) {
     padding-right: 70px;
+    padding-top: 16px;
+    display: flex;
+    align-items: center;
+  }
+  @include bp(xxs) {
+    font-size: 18px;
   }
   &.active{
     height: auto;
@@ -81,6 +88,9 @@
     left: 16px;
     top: 35px;
     opacity: .4;
+    @include bp(md) {
+      top: 30px;
+    }
   }
   i{
     position: absolute;

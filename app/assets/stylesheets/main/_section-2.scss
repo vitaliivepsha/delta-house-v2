@@ -1,11 +1,11 @@
 .about-section{
-  padding: 112px 0 820px;
+  padding: 112px 0 60px;
   //padding: 112px 0 350px;
   background: $light;
-  @include bp(xl) {
-    padding-bottom: 60px;
-    z-index: 1;
-  }
+  //@include bp(xl) {
+  //  padding-bottom: 60px;
+  //  z-index: 1;
+  //}
   @include bp(xs) {
     padding: 40px 0;
     z-index: 1;
@@ -95,6 +95,50 @@
     flex-direction: column;
     margin-bottom: 40px;
   }
+  &__pc{
+    @include bp(xs) {
+      display: none;
+    }
+    .about-mid__pic{
+      transition: 1s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__one{
+      transition: 1s;
+      transition-delay: .5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__two{
+      transition: 1s;
+      transition-delay: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__three{
+      transition: 1s;
+      transition-delay: 2.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
   &__tablet{
     display: none;
     @include bp(xl) {
@@ -103,9 +147,87 @@
     @include bp(xs) {
       display: none;
     }
+    .about-mid__pic{
+      transition: 1s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__one{
+      transition: 1s;
+      transition-delay: .5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__two{
+      transition: 1s;
+      transition-delay: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__three{
+      transition: 1s;
+      transition-delay: 2.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
   &__mobile{
     display: none;
+    @include bp(xs) {
+      display: flex;
+    }
+    .about-mid__pic{
+      transition: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__one{
+      transition: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__two{
+      transition: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .about-mid__three{
+      transition: 1.5s;
+      opacity: 0;
+      transform: translateY(100px);
+      &.animated{
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
   }
   .col-lg-3{
     height: inherit;
@@ -353,9 +475,64 @@
   @include bp(xs) {
     padding: 0;
   }
+}
+
+.about-bot__scheme{
+  position: relative;
+  &.animated{
+    .line{
+      &.line1{
+        width: 47.7%;
+      }
+      &.line2{
+        height: 15.3%;
+      }
+      &.line3{
+        width: 47.7%;
+      }
+    }
+    img{
+      opacity: 1;
+    }
+  }
+  .line{
+    position: absolute;
+    background-color: $black;
+    &.line1{
+      width: 0;
+      height: 15.3%;
+      top: 17.9%;
+      left: 0;
+      transition: width 1.5s;
+      transition-delay: 1.5s;
+    }
+    &.line2{
+      width: 100%;
+      height: 0;
+      //top: 42.4%;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      transition: height 1.5s;
+      transition-delay: 1.5s;
+    }
+    &.line3{
+      width: 0;
+      height: 15.3%;
+      top: 66.8%;
+      right: 0;
+      transition: width 1.5s;
+      transition-delay: 1.5s;
+    }
+  }
   img{
     width: 100%;
     height: auto;
     object-fit: contain;
+    position: relative;
+    z-index: 1;
+    transition: opacity 1s;
+    transition-delay: .5s;
+    opacity: 0;
   }
 }

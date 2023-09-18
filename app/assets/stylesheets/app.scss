@@ -47,6 +47,69 @@ body {
     overflow: hidden;
     height: 100vh;
   }
+  &.video_shown{
+    .header{
+      background: rgba($black, .6);
+      .header-logo{
+        svg{
+          path{
+            fill: #fff;
+          }
+        }
+      }
+      .header-menu{
+        >li{
+          >a, >span{
+            color: #fff;
+          }
+          &.current-menu-item{
+            >a, >span{
+              color: $orange;
+            }
+          }
+        }
+      }
+      .btn{
+        &.btn-tr{
+          color: #fff;
+        }
+      }
+    }
+    .main-top__text{
+      color: #fff;
+      position: relative;
+      z-index: 2;
+    }
+    &.normal_header{
+      .header{
+        background: rgba($light, .6);
+        .header-logo{
+          svg{
+            path{
+              fill: $orange;
+            }
+          }
+        }
+        .header-menu{
+          >li{
+            >a, >span{
+              color: $black;
+            }
+            &.current-menu-item{
+              >a, >span{
+                color: $orange;
+              }
+            }
+          }
+        }
+        .btn{
+          &.btn-tr{
+            color: $black;
+          }
+        }
+      }
+    }
+  }
 }
 
 ol,

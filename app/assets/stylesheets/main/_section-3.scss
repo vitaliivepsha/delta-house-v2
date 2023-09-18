@@ -1,15 +1,16 @@
 .logos-section{
   max-width: 100vw;
-  margin-top: -700px;
+  //margin-top: -700px;
   background: $light;
-  @include bp(xl) {
-    margin-top: 0;
-    overflow: hidden;
-    padding-top: 60px;
-  }
-  @include bp(sm) {
-    padding-bottom: 90px;
-  }
+  padding: 60px 0 72px;
+  overflow: hidden;
+  //@include bp(xl) {
+  //  margin-top: 0;
+  //  padding-top: 60px;
+  //}
+  //@include bp(sm) {
+  //  padding-bottom: 90px;
+  //}
   @include bp(xs) {
     padding: 40px 0;
   }
@@ -29,12 +30,12 @@
 }
 
 .logos-inner{
-  position: sticky;
+  //position: sticky;
   //top: 212px;
   //top: 0;
   //height: 100vh;
-  top: calc(50vh - 116px - 94px);
-  height: 50vh;
+  //top: calc(50vh - 116px - 94px);
+  //height: 50vh;
   display: flex;
   align-items: center;
   @include bp(xl) {
@@ -42,8 +43,8 @@
     //padding: 0 30px;
     //height: 33.33333vh;
     //top: calc(50vh - 50.66667px - 94px);
-    height: 100vh;
-    top: 0;
+    //height: 100vh;
+    //top: 0;
   }
   @include bp(sm) {
     position: static;
@@ -67,7 +68,7 @@
   //  overflow: hidden;
   //}
   @include bp(xl) {
-    top: 94px;
+    //top: 94px;
   }
   @include bp(sm) {
     top: auto;
@@ -150,6 +151,61 @@
       margin-right: 15px;
       margin-left: 15px;
       margin-bottom: 30px;
+    }
+  }
+  .slick-arrow{
+    position: absolute;
+    padding: 0;
+    font-size: 0;
+    background-color: transparent;
+    border: none;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    top: 32px;
+    right: 0;
+    z-index: 2;
+    @include bp(xl) {
+      top: 0;
+    }
+    &:hover{
+      &:before{
+        opacity: 1;
+      }
+    }
+    &:before{
+      display: block;
+      content: '';
+      width: 24px;
+      height: 24px;
+      -webkit-mask: url("../images/icons/slider-arrow.svg");
+      mask: url("../images/icons/slider-arrow.svg");
+      -webkit-mask-position: center;
+      mask-position: center;
+      -webkit-mask-repeat: no-repeat;
+      mask-repeat: no-repeat;
+      -webkit-mask-size: contain;
+      mask-size: contain;
+      background-color: $orange;
+      transition: ease 0.3s;
+      opacity: .4;
+    }
+    &.slick-prev{
+      right: 40px;
+      transform: scale(-1, 1);
+    }
+  }
+  .slick-list{
+    overflow: visible;
+  }
+  .slick-track{
+    display: flex;
+    align-items: center;
+  }
+  .slick-slide{
+    margin-right: 60px;
+    @include bp(xl) {
+      margin-right: 40px;
     }
   }
 }
