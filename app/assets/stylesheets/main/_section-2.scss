@@ -120,7 +120,7 @@
     }
     .about-mid__two{
       transition: 1s;
-      transition-delay: 1.5s;
+      transition-delay: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -130,7 +130,7 @@
     }
     .about-mid__three{
       transition: 1s;
-      transition-delay: 2.5s;
+      transition-delay: 1.5s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -168,7 +168,7 @@
     }
     .about-mid__two{
       transition: 1s;
-      transition-delay: 1.5s;
+      transition-delay: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -178,7 +178,7 @@
     }
     .about-mid__three{
       transition: 1s;
-      transition-delay: 2.5s;
+      transition-delay: 1.5s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -193,7 +193,7 @@
       display: flex;
     }
     .about-mid__pic{
-      transition: 1.5s;
+      transition: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -202,7 +202,7 @@
       }
     }
     .about-mid__one{
-      transition: 1.5s;
+      transition: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -211,7 +211,7 @@
       }
     }
     .about-mid__two{
-      transition: 1.5s;
+      transition: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -220,7 +220,7 @@
       }
     }
     .about-mid__three{
-      transition: 1.5s;
+      transition: 1s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -455,11 +455,19 @@
 }
 
 .about-bot__text{
+  transition: linear .5s;
+  position: relative;
+  transform: translateY(100px);
+  opacity: 0;
   @include bp(xl) {
     margin-top: 40px;
   }
   @include bp(xs) {
     margin-top: 20px;
+  }
+  &.animated{
+    opacity: 1;
+    transform: translateY(0);
   }
   >div{
     font-size: 17px;
@@ -503,8 +511,8 @@
       height: 15.3%;
       top: 17.9%;
       left: 0;
-      transition: width 1.5s;
-      transition-delay: 1.5s;
+      transition: width 1s;
+      transition-delay: .5s;
     }
     &.line2{
       width: 100%;
@@ -513,16 +521,16 @@
       left: 0;
       top: 50%;
       transform: translateY(-50%);
-      transition: height 1.5s;
-      transition-delay: 1.5s;
+      transition: height 1s;
+      transition-delay: .5s;
     }
     &.line3{
       width: 0;
       height: 15.3%;
       top: 66.8%;
       right: 0;
-      transition: width 1.5s;
-      transition-delay: 1.5s;
+      transition: width 1s;
+      transition-delay: .5s;
     }
   }
   img{
@@ -531,8 +539,7 @@
     object-fit: contain;
     position: relative;
     z-index: 1;
-    transition: opacity 1s;
-    transition-delay: .5s;
+    transition: opacity .5s;
     opacity: 0;
   }
 }

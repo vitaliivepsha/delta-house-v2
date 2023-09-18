@@ -105,6 +105,9 @@ body {
         .btn{
           &.btn-tr{
             color: $black;
+            &:hover{
+              color: #fff;
+            }
           }
         }
       }

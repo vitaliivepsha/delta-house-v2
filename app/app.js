@@ -70,10 +70,10 @@ $(function () {
             if (scroll > top && scroll < bottom) {
                 $video_wrapper.addClass('active');
                 $('.header').attr('id', data_id);
-                $('body').addClass('video_shown');
+                //$('body').addClass('video_shown');
             }
             else{
-                //$video_wrapper.removeClass('active');
+                $video_wrapper.removeClass('active');
                 $('.header').removeAttr('id');
             }
             if (scroll > about_top) {
@@ -163,7 +163,7 @@ $(function () {
         $('body').addClass('menu-opened');
         setTimeout(function () {
             $('.menu-main').addClass('transition-end');
-        }, 4000);
+        }, 1200);
     });
 
     $('.menu-close').click(function () {
@@ -269,7 +269,7 @@ $(function () {
                 move_left = house_images_bottom_width - container_width;
             $(window).scroll(function() {
                 //console.log(house_images_top_width, house_images_bottom_width, container_width, move_left, move_right);
-                var screen_pos = $('.house-images').offset().top - $(window).height()/3,
+                var screen_pos = $('.house-images').offset().top - $(window).height()/3 - 100,
                     wScroll = $(this).scrollTop();
                 if (wScroll > screen_pos) {
                     $house_images_top.css({left: move_right + 'px'});
@@ -286,11 +286,27 @@ $(function () {
 
     if($('.about-section').length){
         setTimeout(function () {
+            var $scheme_text = $('.about-bot__text');
+            $(window).scroll(function() {
+                var wScroll = $(this).scrollTop();
+                if ($(window).width() > 1249){
+                    var scheme_text_pos = $scheme_text.offset().top - $scheme_text.height()/2 - 100;
+                }
+                else{
+                    var scheme_text_pos = $scheme_text.offset().top - $scheme_text.height();
+                }
+                console.log(wScroll, scheme_text_pos);
+                if (wScroll > scheme_text_pos) {
+                    $scheme_text.addClass('animated');
+                } else {
+                    //$scheme.removeClass('animated');
+                }
+            });
             var $scheme = $('.about-bot__scheme');
             $(window).scroll(function() {
                 var wScroll = $(this).scrollTop();
                 if ($(window).width() > 1249){
-                    var scheme_pos = $scheme.offset().top - $scheme.height()/2 + 200;
+                    var scheme_pos = $scheme.offset().top - $scheme.height()/2 - 100;
                 }
                 else{
                     var scheme_pos = $scheme.offset().top - $scheme.height();

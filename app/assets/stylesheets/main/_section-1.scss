@@ -83,7 +83,7 @@
   }
   &.animate-me{
     &:after{
-      transition: scale 2s, top 3s, border-radius 3s;
+      transition: scale 1s ease-in-out, top 2s ease-in-out, border-radius 2s ease-in-out, opacity 1s ease-in-out;
     }
     .main-video{
       .iframe-wrapper{
@@ -94,15 +94,17 @@
   &.active{
     &:after{
       opacity: 1;
-      visibility: visible;
+      //visibility: visible;
       //transform: translateY(-200px);
       border-radius: 0;
       scale: 1;
       top: 0;
+      //transition: scale 2s, top 3s, border-radius 3s;
     }
     .main-video{
       .iframe-wrapper{
         scale: 1;
+        border-radius: 24px;
       }
     }
   }
@@ -115,13 +117,14 @@
     bottom: 0;
     content: '';
     opacity: 0;
-    visibility: hidden;
+    //visibility: hidden;
     //transition: linear .7s;
     background-color: $black;
     z-index: 1;
-    scale: .7;
+    scale: .6;
     border-radius: 24px;
     //height: calc(100% + 200px);
+    //transition: scale 2s, top 3s, border-radius 3s;
     @include bp(xs) {
       border-radius: 15px;
     }
@@ -138,11 +141,15 @@
   }
   .iframe-wrapper{
     scale: .8;
+    border-radius: 0;
+    overflow: hidden;
+    backface-visibility: hidden;
     @include bp(xl) {
-      border-radius: 24px;
+      border-radius: 0;
       overflow: hidden;
     }
     @include bp(xs) {
+      scale: 1;
       border-radius: 10px;
     }
   }
