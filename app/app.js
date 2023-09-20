@@ -125,6 +125,12 @@ $(function () {
         }, 1200);
     }*/
 
+    $('.logos').on('beforeChange', function(event, slick, currentSlide, nextSlide){
+        $('.logos .slick-arrow').focus(function() {
+            this.blur();
+        });
+    });
+
     // scale content when footer is visible
 
     setTimeout(function () {
@@ -163,7 +169,7 @@ $(function () {
         $('body').addClass('menu-opened');
         setTimeout(function () {
             $('.menu-main').addClass('transition-end');
-        }, 1200);
+        }, 2000);
     });
 
     $('.menu-close').click(function () {
@@ -172,6 +178,19 @@ $(function () {
         setTimeout(function () {
             $('.menu-main').removeClass('transition-end');
         }, 800);
+    });
+
+    $('.menu-main__list .has-children > a, .menu-main__list .has-children > span').on('click', function(e) {
+        e.preventDefault();
+        $(this).parent().toggleClass('open');
+    });
+
+    $(document).click(function() {
+        $('.menu-main__list .has-children').removeClass('open');
+    });
+
+    $(document).on('click', '.menu-main__list .has-children', function(e) {
+        e.stopPropagation();
     });
 
     // iframe video play
@@ -363,6 +382,31 @@ $(function () {
                 if (wScroll > about_three_mob_pos) {
                     $about_three_mob.addClass('animated');
                 }
+            });
+        }, 1200);
+    }
+
+    // modular house page animations
+
+    if($('.house-main__blocks').length){
+        setTimeout(function () {
+            $('.house-main__blocks-item').each(function (){
+                var $house_block = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        house_block_pos = $house_block.offset().top - $house_block.height() - 400;
+                    // if ($(window).width() > 1199){
+                    //     var house_block_pos = $house_block.offset().top - $house_block.height() - 400;
+                    // }
+                    // else{
+                    //     var house_block_pos = $house_block.offset().top - $house_block.height();
+                    // }
+                    if (wScroll > house_block_pos) {
+                        $house_block.addClass('animated');
+                    } else {
+                        //$scheme.removeClass('animated');
+                    }
+                });
             });
         }, 1200);
     }

@@ -62,11 +62,24 @@
   &.transition-end{
     transition: 1s ease-out;
     transition-delay: .3s;
+    &:not(.active){
+      .menu-main__list{
+        >li{
+          &.has-children{
+            overflow: hidden;
+          }
+        }
+      }
+    }
     .menu-close, >svg{
       transition: ease-in-out .5s;
     }
     .menu-main__list{
       >li{
+        //overflow: unset;
+        &.has-children{
+          overflow: visible;
+        }
         a{
           transition: ease-out .5s;
         }
@@ -199,8 +212,13 @@
   font-weight: 600;
   line-height: 120%;
   margin-bottom: 40px;
+  position: relative;
+  z-index: 1;
   @include bp(xxl) {
     font-size: 32px;
+  }
+  @include bp(xxs) {
+    font-size: 20px;
   }
   >li{
     margin-bottom: 20px;
@@ -250,13 +268,100 @@
         }
       }
     }
+    &.has-children{
+      position: relative;
+      z-index: 1;
+      width: max-content;
+      margin-left: auto;
+      margin-right: auto;
+      a, span{
+        align-items: center;
+        svg{
+          margin-left: 20px;
+          @include bp(xs) {
+            margin-left: 16px;
+          }
+        }
+      }
+      &:hover{
+        >a, span{
+          @include bp(xs) {
+            color: $black;
+          }
+        }
+        svg{
+          path{
+            fill: $orange;
+            @include bp(xs) {
+              fill: $black;
+            }
+          }
+        }
+      }
+      &.open{
+        >a, span{
+          @include bp(xs) {
+            color: $black;
+          }
+        }
+        svg{
+          transform: scale(1, -1);
+          path{
+            @include bp(xs) {
+              fill: $orange;
+            }
+          }
+        }
+        >ul{
+          visibility: visible;
+          opacity: 1;
+          transform: translateX(-50%) translateY(8px);
+        }
+      }
+      >ul{
+        position: absolute;
+        z-index: 2;
+        left: 50%;
+        top: 100%;
+        transform: translateX(-50%) translateY(-20px);
+        transition: linear .2s;
+        opacity: 0;
+        visibility: hidden;
+        background-color: $light;
+        padding: 20px;
+        width: 100%;
+        min-width: 332px;
+        font-size: 17px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 140%;
+        box-shadow: 0 4px 4px 0 rgba(71, 72, 68, 0.25);
+        text-align: left;
+        @include bp(xs) {
+          min-width: unset;
+        }
+        li{
+          margin-bottom: 20px;
+          &:last-child{
+            margin-bottom: 0;
+          }
+          a{
+            width: auto;
+            display: block;
+            margin: 0;
+          }
+        }
+      }
+    }
+    a, span{
+      display: block;
+    }
     a{
       position: relative;
       top: 50px;
       transition: ease-in .5s;
       opacity: .6;
       width: max-content;
-      display: block;
       margin: 0 auto;
       &:hover{
         &:before{

@@ -26,6 +26,8 @@
   font-weight: 600;
   line-height: 120%;
   text-indent: 88px;
+  transition: linear .2s;
+  cursor: default;
   @include bp(xxl) {
     font-size: 80px;
   }
@@ -42,6 +44,9 @@
   }
   @include bp(xxs) {
     font-size: 42px;
+  }
+  &:hover{
+    color: $accent;
   }
 }
 

@@ -423,11 +423,11 @@ main {
   }
 }
 
-::selection {
-  background: $light;
-  color: $accent;
-  text-shadow: none;
-}
+//::selection {
+//  background: $light;
+//  color: $accent;
+//  text-shadow: none;
+//}
 
 // Header
 @import "header";

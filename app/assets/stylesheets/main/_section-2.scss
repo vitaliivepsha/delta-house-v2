@@ -430,13 +430,42 @@
       }
     }
   }
+  //>div{
+  //  min-height: 15px;
+  //  flex-grow: 1;
+  //  width: 100%;
+  //  background-color: $black;
+  //  @include bp(xs) {
+  //    min-height: 30px;
+  //  }
+  //}
   >div{
-    min-height: 15px;
+    min-height: 65px;
     flex-grow: 1;
     width: 100%;
     background-color: $black;
+    color: $accent;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 140%;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 10px;
+    @include bp(xxl) {
+      min-height: 73px;
+    }
+    @include bp(xl) {
+      min-height: 75px;
+      font-size: 18px;
+      padding: 10px 16px;
+    }
     @include bp(xs) {
-      min-height: 30px;
+      min-height: 72px;
+      font-size: 16px;
     }
   }
 }
