@@ -5,6 +5,7 @@
 if (process.env.NODE_ENV !== 'production') {
     require('./assets/templates/layouts/index.html');
     require('./assets/templates/layouts/house.html');
+    require('./assets/templates/layouts/about.html');
 }
 
 // Depends
@@ -798,6 +799,29 @@ $(function () {
             });
         }).scroll();
     }
+
+    // counter
+
+    $(window).on('scroll', function () {
+        $('.animated-number').each(function () {
+            var position = $(this).offset().top;
+            var scrollPosition = $(window).scrollTop() + $(window).height() - 150;
+
+            if (scrollPosition > position && !$(this).data('animated')) {
+                var $this = $(this);
+                $(this).data('animated', true);
+                $({Counter: 0}).animate({
+                    Counter: $this.data('num')
+                }, {
+                    duration: 3000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.ceil(this.Counter));
+                    }
+                });
+            }
+        });
+    });
 
     // lazy load
     var lazyload = function () {
