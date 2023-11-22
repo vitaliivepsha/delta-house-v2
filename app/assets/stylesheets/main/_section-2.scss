@@ -18,22 +18,21 @@
   height: 792px;
   margin-bottom: 177px;
   @include bp(xxl) {
-    height: 657px;
+    height: 544px;
     margin-bottom: 80px;
   }
   @include bp(xl) {
     height: 370px;
   }
-  @include bp(sm) {
-    height: 320px;
+  @include bp(md) {
+    height: auto;
   }
   @include bp(xs) {
-    height: auto;
     flex-direction: column;
     align-items: flex-start;
     margin-bottom: 60px;
   }
-  .col-lg-2{
+  .col-lg-1{
     @include bp(xl) {
       display: none;
     }

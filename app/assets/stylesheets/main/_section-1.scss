@@ -21,7 +21,7 @@
 }
 
 .main-top__text-left{
-  font-size: 100px;
+  font-size: 92px;
   font-style: normal;
   font-weight: 600;
   line-height: 120%;
@@ -29,7 +29,7 @@
   transition: linear .2s;
   cursor: default;
   @include bp(xxl) {
-    font-size: 80px;
+    font-size: 72px;
   }
   @include bp(xl) {
     width: 100%;
@@ -51,14 +51,14 @@
 }
 
 .main-top__text-right{
-  padding-top: 63px;
+  padding-top: 51px;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-transform: uppercase;
   @include bp(xxl) {
-    padding-top: 53px;
+    padding-top: 32px;
   }
   @include bp(xl) {
     width: 50%;

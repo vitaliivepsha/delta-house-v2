@@ -139,6 +139,9 @@
   span{
     padding-left: 55px;
     @include bp(xxl) {
+      padding-left: 33px;
+    }
+    @include bp(xl) {
       padding-left: 0;
     }
   }
