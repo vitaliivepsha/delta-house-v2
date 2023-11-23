@@ -412,6 +412,113 @@ $(function () {
         }, 1200);
     }
 
+    // about page animations
+
+    if($('.about-main__corner-text').length){
+        setTimeout(function () {
+            $('.about-main__corner-text').each(function (){
+                var $about_corner_text = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_corner_text_pos = $about_corner_text.offset().top - $about_corner_text.height() - 400;
+                    if (wScroll > about_corner_text_pos) {
+                        $about_corner_text.addClass('animated');
+                    }
+                });
+            });
+        }, 900);
+    }
+
+    if($('.about-main__scheme').length){
+        setTimeout(function () {
+            $('.about-main__scheme').each(function (){
+                var $about_scheme = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_scheme_pos = $about_scheme.offset().top - $about_scheme.height() - 400;
+                    if (wScroll > about_scheme_pos) {
+                        $about_scheme.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
+    if($('.about-main__list').length){
+        setTimeout(function () {
+            $('.about-main__list li').each(function (){
+                var $about_list_item = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_list_item_pos = $about_list_item.offset().top - $about_list_item.height() - 400;
+                    if (wScroll > about_list_item_pos) {
+                        $about_list_item.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
+    if($('.about-page__mid').length){
+        setTimeout(function () {
+            $('.about-page__mid .col-md-6').each(function (){
+                var $about_mid_item = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_mid_item_pos = $about_mid_item.offset().top - $about_mid_item.height() - 400;
+                    if (wScroll > about_mid_item_pos) {
+                        $about_mid_item.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
+    if($('.about-page__bot-title').length){
+        setTimeout(function () {
+            $('.about-page__bot-title').each(function (){
+                var $about_bot_title = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_bot_title_pos = $about_bot_title.offset().top - $about_bot_title.height() - 400;
+                    if (wScroll > about_bot_title_pos) {
+                        $about_bot_title.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
+    if($('.about-page__bot-list').length){
+        setTimeout(function () {
+            $('.about-page__bot-list li').each(function (){
+                var $about_bot_item = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_bot_item_pos = $about_bot_item.offset().top - $about_bot_item.height() - 400;
+                    if (wScroll > about_bot_item_pos) {
+                        $about_bot_item.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
+    if($('.about-page__bot-text').length){
+        setTimeout(function () {
+            $('.about-page__bot-text').each(function (){
+                var $about_bot_text = $(this);
+                $(window).scroll(function() {
+                    var wScroll = $(this).scrollTop(),
+                        about_bot_text_pos = $about_bot_text.offset().top - $about_bot_text.height()/2;
+                    if (wScroll > about_bot_text_pos) {
+                        $about_bot_text.addClass('animated');
+                    }
+                });
+            });
+        }, 1200);
+    }
+
     /*setTimeout(function () {
         $('.line1').addClass('animated');
     }, 1200);
@@ -802,26 +909,28 @@ $(function () {
 
     // counter
 
-    $(window).on('scroll', function () {
-        $('.animated-number').each(function () {
-            var position = $(this).offset().top;
-            var scrollPosition = $(window).scrollTop() + $(window).height() - 150;
+    setTimeout(function () {
+        $(window).on('scroll', function () {
+            $('.animated-number').each(function () {
+                var position = $(this).offset().top;
+                var scrollPosition = $(window).scrollTop() + $(window).height() - 150;
 
-            if (scrollPosition > position && !$(this).data('animated')) {
-                var $this = $(this);
-                $(this).data('animated', true);
-                $({Counter: 0}).animate({
-                    Counter: $this.data('num')
-                }, {
-                    duration: 3000,
-                    easing: 'swing',
-                    step: function () {
-                        $this.text(Math.ceil(this.Counter));
-                    }
-                });
-            }
+                if (scrollPosition > position && !$(this).data('animated')) {
+                    var $this = $(this);
+                    $(this).data('animated', true);
+                    $({Counter: 0}).animate({
+                        Counter: $this.data('num')
+                    }, {
+                        duration: 3000,
+                        easing: 'swing',
+                        step: function () {
+                            $this.text(Math.ceil(this.Counter));
+                        }
+                    });
+                }
+            });
         });
-    });
+    }, 1500);
 
     // lazy load
     var lazyload = function () {
