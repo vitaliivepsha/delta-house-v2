@@ -17,6 +17,7 @@
   align-items: flex-end;
   height: 792px;
   margin-bottom: 177px;
+  overflow: hidden;
   @include bp(xxl) {
     height: 544px;
     margin-bottom: 80px;
@@ -46,6 +47,13 @@
   font-weight: 600;
   line-height: 120%;
   text-align: right;
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(-100px);
+  &.animated{
+    opacity: 1;
+    transform: translateX(0);
+  }
   @include bp(xxl) {
     font-size: 48px;
   }
@@ -65,6 +73,13 @@
 }
 
 .about-top__pic{
+  transition: 1s;
+  opacity: 0;
+  transform: translateX(100px);
+  &.animated{
+    opacity: 1;
+    transform: translateX(0);
+  }
   @include bp(xl) {
     width: calc(50% + 9px);
     margin-right: -9px;
@@ -109,7 +124,7 @@
     }
     .about-mid__one{
       transition: 1s;
-      transition-delay: .5s;
+      transition-delay: .3s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -119,7 +134,7 @@
     }
     .about-mid__two{
       transition: 1s;
-      transition-delay: 1s;
+      transition-delay: .6s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{
@@ -129,7 +144,7 @@
     }
     .about-mid__three{
       transition: 1s;
-      transition-delay: 1.5s;
+      transition-delay: .9s;
       opacity: 0;
       transform: translateY(100px);
       &.animated{

@@ -83,6 +83,11 @@
   clip-path: url(#about-image-mask);
   max-width: 100%;
   background-color: $black;
+  transition: 1s;
+  opacity: 0;
+  &.animated{
+    opacity: 1;
+  }
   @include bp(md) {
     position: relative;
     height: auto;
@@ -228,13 +233,13 @@
         transform: translateX(0);
       }
       &:nth-child(1){
-        transition-delay: .5s;
+        transition-delay: .3s;
       }
       &:nth-child(2){
-        transition-delay: .7s;
+        transition-delay: .5s;
       }
       &:nth-child(3){
-        transition-delay: .9s;
+        transition-delay: .7s;
       }
     }
   }
@@ -418,6 +423,7 @@
   transition: 1s;
   opacity: 0;
   transform: translateX(-100px);
+  transition-delay: .5s;
   &.animated{
     opacity: 1;
     transform: translateX(0);
@@ -444,6 +450,7 @@
   transition: 1s;
   opacity: 0;
   transform: translateX(100px);
+  transition-delay: 1s;
   &.animated{
     opacity: 1;
     transform: translateX(0);
@@ -576,12 +583,21 @@
   font-weight: 400;
   line-height: 140%;
   margin-top: 60px;
-  transform: translateY(100px);
-  opacity: 0;
-  transition: 1s;
-  &.animated{
-    opacity: 1;
-    transform: translateY(0);
+  >div{
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+    margin-bottom: 20px;
+    &:first-child{
+      margin-top: 0;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+    &.animated{
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   @include bp(md) {
     display: none;
@@ -596,15 +612,20 @@
   .about-page__bot-subtitle, h2, h3, h4{
     display: block;
     margin-top: 30px;
+    margin-bottom: 20px;
     font-size: 20px;
     font-style: normal;
     font-weight: 600;
     line-height: 120%;
+    &:first-child{
+      margin-top: 0;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
   }
   p{
     text-indent: 88px;
-  }
-  >*{
     margin-bottom: 20px;
     &:first-child{
       margin-top: 0;

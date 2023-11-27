@@ -379,6 +379,13 @@
   text-transform: uppercase;
   line-height: 290%;
   margin-bottom: 30px;
+  max-width: 90%;
+  @include bp(md) {
+    max-width: 70%;
+  }
+  @include bp(sm) {
+    max-width: 100%;
+  }
   @include bp(xs) {
     line-height: 240%;
     margin-bottom: 40px;
