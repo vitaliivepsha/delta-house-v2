@@ -1,0 +1,115 @@
+.page-uc{
+  background-color: $light;
+}
+
+.uc-main{
+  padding: 124px 0;
+  @include bp(xxl) {
+    padding: 84px 0 124px;
+  }
+  @include bp(md) {
+    padding: 56px 0 84px;
+  }
+  @include bp(xs) {
+    padding: 44px 0;
+  }
+}
+
+.uc-wrapper{
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  @include bp(md) {
+    margin: 0;
+  }
+}
+
+.uc-title{
+  position: absolute;
+  left: 0;
+  top: 46px;
+  display: block;
+  width: 100%;
+  font-size: 140px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  text-transform: lowercase;
+  color: rgba($black, .08);
+  @include bp(md) {
+    top: 0;
+    font-size: 120px;
+  }
+  @media only screen and (max-width: 799px) {
+    font-size: 110px;
+  }
+  @include bp(sm) {
+    font-size: 14vw;
+  }
+  @include bp(xs) {
+    font-size: 13.4vw;
+  }
+}
+
+.uc-text{
+  @include bp(md) {
+    padding: 104px 0 0;
+  }
+  @include bp(xs) {
+    padding-top: calc(21.95vw - 32px);
+  }
+  .btn{
+    @include bp(md) {
+      margin-left: 106px;
+    }
+    @include bp(sm) {
+      margin-left: 21.35%;
+    }
+  }
+}
+
+.uc-text__main{
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  margin: 0 0 30px;
+  width: 558px;
+  max-width: calc(100% - 117px);
+  @include bp(md) {
+    font-size: 40px;
+    width: auto;
+    max-width: calc(100% - 106px);
+    padding-left: 106px;
+  }
+  @include bp(sm) {
+    padding-left: 21.35%;
+    max-width: 100%;
+  }
+  @include bp(xs) {
+    font-size: 30px;
+    margin-bottom: 20px;
+  }
+}
+
+.uc-text__eng{
+  font-size: 17px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 140%;
+  margin: 0 0 40px;
+  width: 558px;
+  max-width: calc(100% - 117px);
+  @include bp(md) {
+    width: auto;
+    max-width: calc(100% - 106px);
+    padding-left: 106px;
+  }
+  @include bp(sm) {
+    padding-left: 21.35%;
+    max-width: 100%;
+  }
+  @include bp(xs) {
+    margin-bottom: 32px;
+  }
+}
