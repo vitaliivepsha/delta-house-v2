@@ -288,7 +288,7 @@
                     <div class="col-lg-1"></div>
                     <div class="col-lg-6 footer-form__wrapper">
                         <a href="mailto:info@delta-house.nl" class="footer-form__link">info@delta-house.nl</a>
-                        <form class="footer-form ajax_form clear-styles" data-error-title="Send error!"
+                        <form action="/api.php" class="footer-form ajax_form clear-styles" data-error-title="Send error!"
                               data-error-message="Try again after a while." data-success-title="Thank you for contacting us!"
                               data-success-message="We have recived your message. We’ll reach you out immediately!">
                             <div class="input-wrapper">
@@ -356,8 +356,8 @@
                                 <label>Uw bericht</label>
                                 <textarea class="textarea" name="message" data-title="Bericht" placeholder="Een paar woorden over uw vraag en hoe wij u kunnen helpen? (optionele)"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-lg">
-                                Mail een verzoek
+                            <button type="submit" class="btn btn-lg" data-sending="Vertrekken..." data-error="Fout :(" data-sent="Verstuurd">
+                                <span>Mail een verzoek</span>
                                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M22.5 1.5L11 13" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>
                                     <path d="M22.5 1.5L14.5 22.5L11 13L1.5 9.5L22.5 1.5Z" stroke="white" stroke-linecap="round" stroke-linejoin="round"/>

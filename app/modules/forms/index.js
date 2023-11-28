@@ -342,7 +342,7 @@ module.exports = function () {
                     } else {
                         var text = 'Отправляем...';
                     }
-                    button.html(text);
+                    button.find('span').html(text);
                 },
                 success: function (response) {
                     if (typeof dataLayer !== 'undefined') {
