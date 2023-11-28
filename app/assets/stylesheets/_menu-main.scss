@@ -29,9 +29,19 @@
           opacity: 1;
         }
         &.current{
-          a{
+          >a{
             &:before{
               width: 100%;
+            }
+          }
+          &.has-children{
+            >a{
+              &:before{
+                width: calc(100% - 44px);
+                @include bp(xs) {
+                  width: calc(100% - 40px);
+                }
+              }
             }
           }
         }

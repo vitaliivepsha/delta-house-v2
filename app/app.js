@@ -32,8 +32,11 @@ $(function () {
     setTimeout(function () {
         $('body').trigger('scroll');
         $(window).trigger('resize');
-        $('.menu-main').addClass('transition-end');
     }, 100);
+
+    setTimeout(function () {
+        $('.menu-main').addClass('transition-end');
+    }, 300);
 
     setTimeout(function () {
         $('header, footer, main, .menu-main, .widget, .fixed-controls').removeAttr('style');
