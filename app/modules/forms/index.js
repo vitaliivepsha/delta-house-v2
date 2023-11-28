@@ -365,7 +365,7 @@ module.exports = function () {
                     } else {
                         var text = 'Отправлено';
                     }
-                    button.html(text);
+                    button.find('span').html(text);
 
                     if (typeof response.status !== 'undefined' && response.status == 'success') {
                         form.trigger('sent', response);
