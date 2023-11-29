@@ -250,7 +250,7 @@ $(function () {
             var price = $(this).data('price');
             sum += price;
         });
-        $('.house-calculator__total span').html(sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ") + ',0');
+        $('.house-calculator__total span').html(sum.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".") + ',--');
     }
     getsum();
 

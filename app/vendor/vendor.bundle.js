@@ -12602,7 +12602,7 @@ var vendor_lib =
 	                    } else {
 	                        var text = 'Отправляем...';
 	                    }
-	                    button.html(text);
+	                    button.find('span').html(text);
 	                },
 	                success: function (response) {
 	                    if (typeof dataLayer !== 'undefined') {
@@ -12625,7 +12625,7 @@ var vendor_lib =
 	                    } else {
 	                        var text = 'Отправлено';
 	                    }
-	                    button.html(text);
+	                    button.find('span').html(text);
 
 	                    if (typeof response.status !== 'undefined' && response.status == 'success') {
 	                        form.trigger('sent', response);

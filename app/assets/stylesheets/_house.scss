@@ -152,7 +152,7 @@
   align-items: center;
   margin-bottom: 80px;
   @include bp(xxl) {
-    align-items: flex-start;
+    //align-items: flex-start;
   }
   @include bp(lg) {
     flex-direction: column;
