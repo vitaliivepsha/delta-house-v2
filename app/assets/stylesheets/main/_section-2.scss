@@ -519,6 +519,12 @@
     line-height: 140%;
     margin-bottom: 30px;
     text-indent: 90px;
+    p{
+      margin-bottom: 22px;
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
   }
 }
 
