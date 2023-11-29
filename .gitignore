@@ -7,3 +7,4 @@ dist/
 testing/
 /.idea/
 sender/
+/api.php
