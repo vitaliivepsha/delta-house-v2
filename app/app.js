@@ -320,7 +320,7 @@ $(function () {
                 else{
                     var scheme_text_pos = $scheme_text.offset().top - $scheme_text.height();
                 }
-                console.log(wScroll, scheme_text_pos);
+                //console.log(wScroll, scheme_text_pos);
                 if (wScroll > scheme_text_pos) {
                     $scheme_text.addClass('animated');
                 } else {
@@ -336,7 +336,7 @@ $(function () {
                 else{
                     var scheme_pos = $scheme.offset().top - $scheme.height();
                 }
-                console.log(wScroll, scheme_pos);
+                //console.log(wScroll, scheme_pos);
                 if (wScroll > scheme_pos) {
                     $scheme.addClass('animated');
                 } else {

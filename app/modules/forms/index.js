@@ -449,14 +449,17 @@ module.exports = function () {
         return {
             history: { title: '', val: history.length },
             js_user_agent: { title: '', val: getUserAgent(navigator.userAgent) },
-            get: { title: 'Страница', val: window.location.href },
+            //get: { title: 'Страница', val: window.location.href },
+            get: { title: 'Pagina', val: window.location.href },
             referer: {
-                title: 'Заявка пришла со страницы',
+                //title: 'Заявка пришла со страницы',
+                title: 'De applicatie kwam van de pagina',
                 val: (typeof document.referrer == 'undefined' ? 'NULL' : document.referrer)
             },
             host: { title: '', val: host_s },
             utm_source: {
-                title: 'Поисковая система',
+                //title: 'Поисковая система',
+                title: 'Zoeksysteem',
                 val: (typeof (keys['utm_source']) == 'undefined' ? '' : keys['utm_source'])
             },
             utm_campaign: {
