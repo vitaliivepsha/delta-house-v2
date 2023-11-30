@@ -83,11 +83,11 @@
   clip-path: url(#about-image-mask);
   max-width: 100%;
   background-color: $black;
-  transition: 1s;
+  /*transition: 1s;
   opacity: 0;
   &.animated{
     opacity: 1;
-  }
+  }*/
   @include bp(md) {
     position: relative;
     height: auto;
@@ -120,13 +120,13 @@
   font-weight: 400;
   line-height: 140%;
   text-indent: 88px;
-  transition: 1s;
+  /*transition: 1s;
   opacity: 0;
   transform: translateY(100px);
   &.animated{
     opacity: 1;
     transform: translateY(0);
-  }
+  }*/
   @include bp(xxl) {
     height: 184px;
     padding: 12px 8.5%;
@@ -361,7 +361,7 @@
 
 .about-mid__top{
   display: flex;
-  align-items: flex-end;
+  //align-items: flex-end;
   font-size: 48px;
   font-style: normal;
   font-weight: 600;
@@ -387,6 +387,8 @@
 }
 
 .about-mid__top-text{
+  display: flex;
+  align-items: flex-end;
   transition: 1s;
   opacity: 0;
   transform: translateX(-100px);

@@ -424,7 +424,7 @@ $(function () {
 
     // about page animations
 
-    if($('.about-main__corner-text').length){
+    /*if($('.about-main__corner-text').length){
         setTimeout(function () {
             $('.about-main__corner-text').each(function (){
                 var $about_corner_text = $(this);
@@ -438,7 +438,7 @@ $(function () {
                 });
             });
         }, 900);
-    }
+    }*/
 
     if($('.about-main__scheme').length){
         setTimeout(function () {
