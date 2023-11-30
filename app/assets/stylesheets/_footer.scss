@@ -461,7 +461,9 @@
   @include bp(xs) {
     width: auto;
     justify-content: center;
-    gap: 24px;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
     margin-top: 40px;
   }
   .link{
@@ -469,6 +471,11 @@
     color: #fff;
     @include bp(xs) {
       margin-left: 0;
+    }
+    +.link{
+      @include bp(xs) {
+        margin-top: 24px;
+      }
     }
     i{
       border-color: #fff;
