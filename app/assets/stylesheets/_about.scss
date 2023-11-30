@@ -389,7 +389,8 @@
 .about-mid__top-text{
   display: flex;
   align-items: flex-end;
-  transition: 1s;
+  //transition: 1s;
+  transition: .7s;
   opacity: 0;
   transform: translateX(-100px);
   &.animated{
@@ -399,7 +400,8 @@
 }
 
 .about-mid__top-pic{
-  transition: 1s;
+  //transition: 1s;
+  transition: .7s;
   opacity: 0;
   transform: translateX(100px);
   &.animated{
@@ -422,7 +424,8 @@
 .about-mid__bot-pic{
   display: flex;
   justify-content: center;
-  transition: 1s;
+  //transition: 1s;
+  transition: .7s;
   opacity: 0;
   transform: translateX(-100px);
   transition-delay: .5s;
@@ -449,7 +452,8 @@
   font-weight: 400;
   line-height: 140%;
   text-indent: 88px;
-  transition: 1s;
+  //transition: 1s;
+  transition: .7s;
   opacity: 0;
   transform: translateX(100px);
   transition-delay: 1s;
@@ -488,7 +492,8 @@
   margin-bottom: 40px;
   transform: translateY(100px);
   opacity: 0;
-  transition: 1s;
+  //transition: 1s;
+  transition: .7s;
   &.animated{
     opacity: 1;
     transform: translateY(0);
@@ -520,7 +525,8 @@
     min-height: 76px;
     transform: translateY(100px);
     opacity: 0;
-    transition: 1s;
+    //transition: 1s;
+    transition: .7s;
     &.animated{
       opacity: 1;
       transform: translateY(0);
@@ -588,7 +594,8 @@
   >div{
     transform: translateY(100px);
     opacity: 0;
-    transition: 1s;
+    //transition: 1s;
+    transition: .7s;
     margin-bottom: 20px;
     &:first-child{
       margin-top: 0;
