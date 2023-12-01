@@ -453,10 +453,14 @@
   display: flex;
   justify-content: flex-end;
   padding-right: 0;
-  width: calc(33.33333333% + 15px);
+  width: calc(41.66666667% + 15px);
   @include bp(xl) {
     width: max-content;
     padding-right: 15px;
+  }
+  @media only screen and (max-width: 799px){
+    flex-direction: column;
+    align-items: flex-end;
   }
   @include bp(xs) {
     width: auto;
@@ -467,17 +471,28 @@
     margin-top: 40px;
   }
   .link{
+    min-width: max-content;
     margin-left: 44px;
     color: #fff;
+    @include bp(xxl) {
+      margin-left: 40px;
+    }
+    @include bp(md) {
+      margin-left: 44px;
+    }
+    @media only screen and (max-width: 799px){
+      margin-left: 20px;
+    }
     @include bp(xs) {
       margin-left: 0;
     }
     +.link{
-      @include bp(xs) {
+      @media only screen and (max-width: 799px){
         margin-top: 24px;
       }
     }
     i{
+      min-width: 44px;
       border-color: #fff;
       svg{
         path{
@@ -509,7 +524,10 @@
   right: 0;
   position: fixed;
   z-index: 51;
-  @include bp(xs) {
+  @media only screen and (max-width: 799px){
+    bottom: 146px;
+  }
+  @include bp(sm) {
     display: none;
   }
   &.active{
@@ -533,7 +551,7 @@
   justify-content: center;
   transition: linear .2s;
   position: relative;
-  right: -20px;
+  right: -5px;
   &:hover{
     background: $orange;
     svg{
