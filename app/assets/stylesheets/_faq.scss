@@ -9,10 +9,16 @@
     &:last-child{
       .faq-item__head{
         height: 76px;
+        @include bp(xs) {
+          word-break: break-all;
+        }
       }
       &.active{
         .faq-item__head{
           height: auto;
+          @include bp(xs) {
+            height: 76px;
+          }
         }
       }
     }
@@ -31,6 +37,9 @@
     color: #fff;
     .faq-item__head{
       height: auto;
+      @include bp(xs) {
+        height: 84px;
+      }
       i{
         background-color: $green;
         svg{
@@ -76,6 +85,9 @@
   }
   &.active{
     height: auto;
+    @include bp(xs) {
+      height: 84px;
+    }
   }
   &:before{
     position: absolute;
